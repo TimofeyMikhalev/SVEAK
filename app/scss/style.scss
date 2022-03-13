@@ -1,0 +1,573 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+
+@function get-vw($fontSize, $vw-viewport) {
+    $vw-context: $vw-viewport * 0.01 * 1px;
+    @return $fontSize / $vw-context * 1vw;
+    @return $fontSize;
+}
+
+
+
+//Задание №1
+.container_one{
+    //Вариант 1(с помощью:    .block__middle: margin: 33px auto;)
+    .block{
+        width: 600px;
+        height: 100px;
+
+        background: #FFFFFF;
+        border: 1px solid #34A68A;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 50px auto;
+
+        .block__middle{
+            width: 158px;
+            height: 33px;
+
+            border: 1px solid #FF0000;
+            box-sizing: border-box;
+            border-radius: 5px;
+            margin: 33px auto;
+        }
+    }
+
+    //Вариант 2(с помощью:   .block2:padding: 33px 221px;)
+    .block2{
+        width: 600px;
+        height: 100px;
+
+        background: #FFFFFF;
+        border: 1px solid #34A68A;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 50px auto;
+        padding: 33px 221px;
+        .block__middle2{
+            width: 158px;
+            height: 33px;
+
+            border: 1px solid #FF0000;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+        }
+    }
+
+    //Вариант 3(с помощью:  .block3:     display: flex; justify-content: center; align-items: center;)
+    .block3{
+        width: 600px;
+        height: 100px;
+
+        background: #FFFFFF;
+        border: 1px solid #34A68A;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 50px auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .block__middle3{
+            width: 158px;
+            height: 33px;
+
+            border: 1px solid #FF0000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+    }
+
+
+    //Вариант 4(с помощью:  .block__middle4: position: absolute; top: 33px; left: 221px;)
+    .block4{
+        width: 600px;
+        height: 100px;
+
+        background: #FFFFFF;
+        border: 1px solid #34A68A;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 50px auto;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        .block__middle4{
+            width: 158px;
+            height: 33px;
+
+            border: 1px solid #FF0000;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+            position: absolute;
+            top: 33px;
+            left: 221px;
+        
+        }
+    }
+
+
+    //Вариант 5(с помощью:  block__middle5: transform: translate(140%, 100%);)
+    .block5{
+        width: 600px;
+        height: 100px;
+
+        background: #FFFFFF;
+        border: 1px solid #34A68A;
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin: 50px auto;
+        
+
+        .block__middle5{
+            width: 158px;
+            height: 33px;
+
+            border: 1px solid #FF0000;
+            box-sizing: border-box;
+            border-radius: 5px;
+        
+
+            transform: translate(140%, 100%);
+        }
+    }
+
+}
+
+//Задание №2
+.container_two{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .header{
+        width: get-vw(1440px, 1440);
+        height: get-vw(50px, 1440);
+        background-color: #FD9191;
+
+        position: fixed;
+        top: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container__two_container{
+
+        justify-content: center;
+        align-items: center;
+        .sidebar1{
+            width: get-vw(150px, 1440);
+            height: get-vw(250px, 1440);
+            background-color: #E4C1FF;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content{
+            width: get-vw(499px, 1440);
+            height: get-vw(250px, 1440);
+            background: #94CBFF;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sidebar2{
+            width: get-vw(150px, 1440);
+            height: get-vw(250px, 1440);
+            background: #FDFF83;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .footer{
+        width: get-vw(1440px, 1440);
+        height: get-vw(50px, 1440);
+        background-color: #DFFF9B;
+
+        position: absolute;
+        bottom: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+//Задание №3
+.container_three{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: get-vw(769px, 769);
+    .container_three__wrapper{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        
+        width: 100%;
+        .container_three__title{
+            font-size: get-vw(25px, 769);
+            line-height: 1.4;
+            padding: get-vw(10px, 769);
+        
+        }
+        .container_three__container{
+            // display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            width: 100%;
+            height: auto;
+
+         
+            .container_three__menu{
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                
+                .menu_item{
+                    font-size: get-vw(10px, 769);
+                    line-height: 1.4;
+                    padding: get-vw(5px, 769) 0;
+                    margin-left: get-vw(70px, 769);
+                    margin-right: get-vw(70px, 769);
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+            }
+            .container_three__inner_box{
+                .container_three__inner{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+                    height: auto;
+                    border-top: get-vw(1px, 769) solid rgb(131, 127, 127);
+    
+                    .three__inner_list{
+                        padding: 5px 0;
+                        margin: 0 auto;
+                    }
+                }
+                .bg_one{
+                    background-color: #94CBFF;
+                }
+                .bg_two{
+                    background-color: #FD9191;
+                }
+                .bg_three{
+                    background-color: #DFFF9B;
+                }
+                .bg_four{
+                    background-color: #FDFF83;
+                }
+            }
+           
+        }
+       
+
+        .container_three__btn{
+            margin-top: get-vw(50px, 769);
+            background: #94CBFF;
+            width: get-vw(60px, 769);
+            height: get-vw(60px, 769);
+            border: get-vw(1px, 769) solid #FF0000;
+            cursor: pointer;
+
+            border-radius: 50%;
+            text-align: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+}
+
+//Задание №4
+.container_four{
+    background-color: #000;
+
+    position: relative;
+    width: 100%;height: get-vw(825px, 1440);
+    .menu{
+        width: 40px;
+        cursor: pointer;
+        padding: 16px;
+    }
+    .menu div{
+        height: 5px;
+        margin-bottom: 5px;
+        background-color: #fff;
+    }
+
+    .container_four__menu{
+        width: get-vw(500px, 1440);
+        height: get-vw(500px, 1440);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #FFFFFF;
+
+        position: absolute;
+        top: 0;
+        .close{
+            cursor: pointer; 
+            position: absolute; 
+            top: 26px;
+            left: 20px;
+
+            width: 50px;
+            height: 50px;
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                width: 30px;
+                height: 2px; 
+                background: #000;
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+        .four__menu_wrapper{
+
+            
+            .menu_wrapper__items{
+                
+                .menu_wrapper__items_link{
+                    font-size: get-vw(20px, 1400);
+                    line-height: 2;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: .5;
+                    }
+                }   
+            }
+        }
+    }
+    
+.show{
+    display: flex;
+}
+.hide{
+    display: none;
+}
+}
+
+//Задание №5
+.container_five{
+    .container_five__progressbar{
+        display: flex;
+        button{
+            margin-right: get-vw(50px, 1440);
+        }
+        div{
+            margin-right: get-vw(50px, 1440); 
+        }
+        .return{
+            margin-left: get-vw(50px, 1440);
+        }
+    }
+    .progressbar{
+            height: 20px;
+            position: relative;
+            background: #EEEEEE;
+            padding: 3px;
+            width: get-vw(500px, 1440);
+            box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+       
+        span{
+            width: 0%;
+            display: block;
+            height: 100%;
+            background-color: #D9534F;
+            background-image: linear-gradient(
+                center bottom,
+                rgb(43,194,83) 37%,
+                rgb(84,240,84) 69%
+            );
+            box-shadow: 
+                inset 0 2px 9px  rgba(255,255,255,0.3),
+                inset 0 -2px 6px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            animation: move 15s infinite linear;
+         
+        }
+        @keyframes move {
+            0%   { transform: translateX(-5px); }
+            50%  { transform: translateX(5px); }
+            100% { transform: translateX(-5px); }
+        }
+        
+    }
+    .progressbar span::after{
+        content: "";
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background-image: linear-gradient(
+            -45deg, 
+            rgba(255, 255, 255, .2) 25%, 
+            transparent 25%, 
+            transparent 50%, 
+            rgba(255, 255, 255, .2) 50%, 
+            rgba(255, 255, 255, .2) 75%, 
+            transparent 75%, 
+            transparent
+        );
+        z-index: 1;
+        background-size: 50px 50px;
+        animation: move 2s linear infinite;
+        overflow: hidden;
+    }
+}
+
+//Задание №6
+.container_six{
+    margin: get-vw(100px, 1440) get-vw(100px, 1440);
+    .container_six__img{
+        width: get-vw(53px, 1440);
+        height: get-vw(28px, 1440);
+
+        // background-color: #D9534F;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        img{
+            width: 100%;
+        }
+        path{
+            fill: #34A68A;
+        }
+    }
+    
+ 
+    .container_six__btn{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+        .container_six__btn1{
+            width: get-vw(145px, 1440);
+            height: get-vw(32px, 1440);
+
+            color: #fff;
+
+            background: #0066FF;
+            border-radius: get-vw(20px, 1440);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: get-vw(20px, 1440);
+            margin-right: get-vw(20px, 1440);
+            cursor: pointer;
+        }
+        .container_six__btn2{
+            width: get-vw(145px, 1440);
+            height: get-vw(32px, 1440);
+
+            color: #fff;
+
+            background: #0066FF;
+            border-radius: get-vw(20px, 1440);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: get-vw(20px, 1440);
+
+            cursor: pointer;
+        }
+    }
+    .pulse{
+        animation: pulsing 2s infinite;
+    }
+
+}
+
+
+//Задание №7
+.container_seven{
+    .container_seven__items{
+        .seven__items__box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #34A68A;
+            width: get-vw(790px, 1440);
+            height: get-vw(36px, 1440);
+            color: #fff;
+            .seven__items__box1{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: get-vw(295px, 1440);
+                border-right: get-vw(1px, 1440) solid #fff;
+
+                font-size: get-vw(18px, 1440);
+                input::-webkit-input-placeholder { color: #fff; }
+                input{
+                    background: inherit;
+                    border: none;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+  @keyframes pulsing {
+    0% {
+      transform: scale(0.8, 0.8)
+    }
+    50% {
+      transform: scale(1.0, 1.0);
+    }
+    100% {
+      transform: scale(0.8, 0.8);
+    }
+  }
+
+
+
+.show{
+    display: flex;
+}
+.hide{
+    display: none;
+}
+
+.item_desctop{
+    display: flex;
+}
+.item_mobile{
+    display: none;
+}
+
+
+@import "media";
